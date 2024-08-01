@@ -25,7 +25,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish --configuration Release --output 'webapiproject'
+        run: dotnet publish --configuration Release  --runtime win-x86 --no-self-contained -o ./tmp/publish
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
